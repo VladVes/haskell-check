@@ -1,3 +1,3 @@
-doubleSmallNumber x = if x < 100 then x * 2 else x
+doubleMe x = x * 2
 
-doubleSmallNumber' x = (if x < 100 then x * 2 else x) + 1
+doubleUs x y = doubleMe x + doubleMe y
