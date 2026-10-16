@@ -11,3 +11,13 @@ addThree a b c = a + b + c
 
 addThree' :: Num a => a -> a -> a -> a
 addThree' x y z = x + y + z
+
+
+cmp :: (Ord a) => a -> a -> Ordering
+cmp a b = a `compare` b
+
+sh :: (Show a) => a -> String
+sh a = show a
+
+fromStrToInt a = read a :: Int
+
