@@ -21,3 +21,23 @@ sh a = show a
 
 fromStrToInt a = read a :: Int
 
+strPlusInt :: (Read a, Num a) => String -> a -> a 
+strPlusInt a b = read a + b
+
+minB :: Int
+minB = minBound :: Int
+
+maxB :: Int
+maxB = maxBound :: Int
+
+maxBt :: (Int, Bool, Char)
+maxBt = maxBound :: (Int, Bool, Char)
+
+fI :: (Integral a, Num b) => a -> b
+fI a = fromIntegral a
+
+length' :: [a] -> Int
+length' xs = length xs
+
+length'' :: (Num a) => [b] -> a
+length'' xs = fromIntegral (length xs)
