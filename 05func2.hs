@@ -1,3 +1,4 @@
+import Distribution.Simple.Utils (xargs)
 -- 64. Оределить функцию без применения условного выражения if then else
 -- так что бы она выводила бы название (строкой) переданногй ей цифры
 -- от 1 до 3 (т.е. если 1 то отдаёт "one", 2 - "two" и т.д.) а для остальных бы возвращала бы "Unknown number"
@@ -20,3 +21,14 @@ addVectors a b = (fst a + fst b, snd a + snd b)
 
 addVectors' :: (Double, Double) -> (Double, Double) -> (Double, Double)
 addVectors' (x1, x2) (y1, y2) = (x1 + y1, x2 + y2)
+
+
+-- 67. Используя метод сопоставления написать функуции для работы с тройками
+-- (кортежами из трех элементов) на подобии fst и snd но извлекающие так же
+-- и третий элемент
+first :: (Num x) => (x, x, x) -> x
+first (x, _, _) = x
+second :: (Num x) => (x, x, x) -> x
+second (_, x, _) = x
+third :: (Num x) => (x, x, x) -> x
+third (_, _, x) = x
