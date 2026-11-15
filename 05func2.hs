@@ -32,3 +32,14 @@ second :: (Num x) => (x, x, x) -> x
 second (_, x, _) = x
 third :: (Num x) => (x, x, x) -> x
 third (_, _, x) = x
+
+-- 72. Используя метод сопоставления еаписать функцию tell которая сообщает
+-- о нескольких первых элементах списка в виде строк: "The list is empty",
+-- "There is one item in the list: <значение>",
+-- "There are two items in the list: <значение 1> и <значение 2>",
+-- "The list is long. The first two elements: <значение 1> и <значение 2>" (так же описать тип функции в начале)
+tell :: (Show x) => [x] -> String
+tell [] = "The list is empty"
+tell (a:[]) = "There is one item in the list: " ++ show a
+tell (a:b:[]) = "There are two items in the list: " ++ show a ++ ", " ++ show b
+tell (a:b:_) = "The list is long. The first two elements: " ++ show a ++ ", " ++ show b

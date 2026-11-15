@@ -1,17 +1,15 @@
-printNumber :: Int -> String
-printNumber 1 = "One"
-printNumber 2 = "Two"
-printNumber 3 = "Three"
-printNumber x = "Unknown number"
+removeNonUppercase :: [Char] -> [Char] 
+removeNonUppercase cs = [c | c <- cs, c `elem` ['A'..'Z']]
 
+xs = [(1,3), (4,3), (2,4), (5,3), (5,6), (3,1)]
+ls = [a+b | (a, b) <- xs]
 
-fact :: Integer -> Integer
-fact 0 = 1
-fact x = x * fact (x - 1)
+head':: [x] -> x
+head' [] = error "Empty list!"
+head' (x: _) = x
 
-sumVec :: (Num x) => (x, x) -> (x, x) -> (x, x)
-sumVec x y = (fst x + fst y, snd x + snd y)
-
-
-sumVec' :: (Num x) => (x, x) -> (x, x) -> (x, x)
-sumVec' (x1, y1) (x2, y2) = (x1 + x2, y1 + y2)
+tell :: (Show x) => [x] -> String
+tell [] = "The list is empty"
+tell (a:[]) = "There is one item in the list: " ++ show a
+tell (a:b:[]) = "There are two items in the list: " ++ show a ++ ", " ++ show b
+tell (a:b:xs) = "The list is long. The first two elements: " ++ show a ++ ", " ++ show b
